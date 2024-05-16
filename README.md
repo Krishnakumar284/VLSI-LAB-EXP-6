@@ -1,3 +1,4 @@
+## ANALOG DESIGN OF INVERTER, NOR AND NAND GATE USING VIRTUOSO
 ## AIM: 
    To Schematic and Simulate Inverter using CADENCE virtuoso. 
 ## APPARATUS REQUIRED: 
