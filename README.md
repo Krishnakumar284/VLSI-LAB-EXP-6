@@ -1,172 +1,96 @@
-**6. SCHEMATIC ENTRY AND SIMULATION OF CMOS INVERTER, CMOS NAND and CMOS NOR USING CADENCE TOOL**
+## AIM: 
+   To Schematic and Simulate Inverter using CADENCE virtuoso. 
+## APPARATUS REQUIRED: 
+   CADENCE VIRTUOSO 
+## PROCEDURE: 
+### Procedure for Commands to get into Cadence<br>
+1.	Right Click and open the terminal window<br>
+2.	Type the following commands as follows and press enter.<br>
+    i)	tcsh<br>
+    ii)	source /home/install/cshrc<br>
+    iii)	virtuoso <br>
+### Procedure for Schematic simulation using Cadence<br>
+1.	Now two windows must open i)virtuoso/command interpreter window ii)”Whats New…"<br>
+2.	Close the 2nd window<br>
+3.	Use 1st window i.e virtuoso window(CIW) for further processing.<br>
+    i)	Create a New Library<br>
+    ii)	Create Schematic Cell view.<br>
+    iii)	Create the Symbol for schematic Cell view.<br>
+    iv)	Create the test Cell view.<br>
+    v)	Analog simulation by spectre<br>
+### Procedure for Creating New Library.<br>
+a)	File –New – Library<br>
+b)	Name : Give name for ur library Ex: VLSILAB , Enable Attach to an existing technology library, Click OK<br>
+c)	Attach the library to the technology library gpdk045.Click OK<br>
+### Create Schematic Cell view.
+a)	Go to 1st window i.e virtuoso(CIW)<br>
+b)	File-New-Cell view<br>
+c)	Setup the new file form, Library: Select the one you a created. Cell : Give the experiment name Ex: Inverter View: Schematic<br>
+d)	Type: Schematic press OK<br>
+e)	Add the required components from the libraries and make the connections.<br>
+f)	Go to instance fixed menu or use shortcut key “I” from keypad to go instances Click on browse. This opens the library browser ow select the appropriate library for components like Gpdk045,nmos, pmos<br>
+g)	Analog library	Vdd, Gnd, Vcc, Vpulse, Vsin<br>
+h)	Make the connections by using fixed narrow wire key<br>
+i)	Click Check and Save button<br>
+### Creating the Symbol for schematic Cell view
+a.	In the schematic window, execute
+Crate – Cell view – From Cell view
+The cell view from cell view window appears
+Check Lib Name, Cell Name, From View name must be schematic Press ok<br>
+b.	Now Symbol generation form appears. Click Ok If No changes required<br>
+c.	A new window with with default symbol is created.<br>
+d.	Edit the symbol if you want to give actual symbol shape else continue.<br>
+    i.	Execute Create-Cell view-from cell view<br>
+    ii.	Library Name and Cell Name must be same which you have used for schematic. Press OK<br>
+    iii.	Check for the position of pin side.Prss OK<br>
+    iv.	Edit for the shape by Create-Shape-Choose required options to edit.<br>
+## Creating the new test cell view<br>
+a)	Go to CIW window, Execute File-New-Cell view<br>
+b)	Setup the new file form<br>
+Library: Select the one you a created.<br>
+Cell: Cell name must be different from the name used in schematic cell view. Ex: Inverter_test<br>
+View: Schematic<br>
+Type: Schematic  press OK<br>
+Analog simulation by SPECTRE.<br>
+a.	In test cell view window<br>
+b.	Launch – ADE L(Analog Design Environment)<br>
+c.	Execute Setup—Simulation/directory/Host A new window opens<br>
+d.	Set the simulation window to spectre and click ok<br>
+e.	Execute Setup-Model Library. Anew window opens, Check of gpdk.scs as lib and section type as stat then press OK.<br>
+f.	Execute Analysis – Choose. A window opens.<br>
+g.	Select the type and set the specifications and press OK<br>
+h.	Execute Output s—to be plotted – Select on Schematic<br>
+i.	Then Select the INPUT WIRE(Vin ) and OUTPUT WIRE(Vout) from your test Schematic using mouse<br>
+j.	Execute Simulation -- Net list and Run<br>
+## Simulation Settings
 
-**AIM:**
+Setup for transient analysis:<br>
+1. Stop time = 400n<br>
+Setup for D.C analysis<br>
+1. Component to be selected in schematic is	for d.c analysis<br>
+2. Start = -1 Stop = 1 resp.<br>
 
-To design and simulate the CMOS inverter and observe the DC and transient responses using cadence tool.
+## CMOS INVERTER
+![330746618-3e336a66-13c5-4da6-956f-b8195b3a4a21](https://github.com/Krishnakumar284/VLSI-LAB-EXP-6/assets/160303010/8002d4d3-5dd3-421c-8d58-28f8c5a64834)
+![330746724-406f55bd-11f9-41e5-9592-c52a4d219b9a](https://github.com/Krishnakumar284/VLSI-LAB-EXP-6/assets/160303010/65025341-79eb-4329-85dc-231b712ab13c)
 
-**APPARATUS REQUIRED:**
- 
-1.	Laptop with MobaXterm
-2.	Cadence tool
-	
-**PROCEDURE**
+## OUTPUT
+![330746922-c3546127-c5f4-4802-b709-898757e349c9](https://github.com/Krishnakumar284/VLSI-LAB-EXP-6/assets/160303010/0980e067-ecf4-48f2-a2b8-c54ea2d08b54)
 
-**CREATING A NEW LIBRARY:**
-1.	In the library manager, execute File - New library. The new library form appears.
-2.	In the new library form, type ‘my design lib’ in the name section.
-3.	In the field of directory section, verify that the path to the library is set to ~/Database / Cadence- analog – lab –bl3 and click ok.
-4.	In the next ‘technology file for new library form select option attach to an existing tech file and click ok.
-5.	In the ‘attach design library to technology file’ form, select gpdk045 form the cyclic field and click ok.
-6.	After creating a new library you can verify it from the library manager.
-7.	If you right click on the ‘my design lib’ and select properties, you will find that gpdk045 library is attached as techlib to ‘my design lib’.
+## NANDGATE
+![330751905-f54e8aa1-f7c1-498b-9c36-d532819ca0e8](https://github.com/Krishnakumar284/VLSI-LAB-EXP-6/assets/160303010/d49f2a7e-1180-4a09-abc8-5727a4fa5c07)
+![330752067-c909717f-baca-4f7a-9358-009b6c950e77](https://github.com/Krishnakumar284/VLSI-LAB-EXP-6/assets/160303010/5750cfcc-b4db-4d93-9a9c-d427e0c8a7ea)
 
-**CREATING A SCHEMATIC CELL VIEW:**
+## OUTPUT
+![330752587-9ae8390a-57cf-454a-a78d-cbfd868c8176](https://github.com/Krishnakumar284/VLSI-LAB-EXP-6/assets/160303010/a19a128a-f5c2-4b42-b82b-be1af6349ec0)
 
-1.	In the CIW or library manager, execute file – new – cell viw.
-2.	Setup the new file form as follows, Do not edit the library path file and the above might be different from the path shown in your form.
-3.	Click ok when done the above setting. A black schematic window for the inverter design appears.
+## NORGATE
+![330752790-71f05040-35df-405f-bb47-3630a781cedc](https://github.com/Krishnakumar284/VLSI-LAB-EXP-6/assets/160303010/d1dc1bff-80a8-46ca-857c-f9599111b901)
+![330752976-840cf0b0-3d45-465a-af8c-a56f13c09a25-1](https://github.com/Krishnakumar284/VLSI-LAB-EXP-6/assets/160303010/0402352c-efc3-43d5-9d38-245a5da80057)
 
-**ADDING COMPONENTS TO SCHEMATIC:**
+## OUTPUT
 
-1.	In the inverter schematic window, click the instance fixed menu icon to display the add instance form.
-2.	Click on the browse button. This opens up a library browser from which you can select components and the symbol view.
-3.	After you complete the add instance form move your cursor to the schematic window and click left to place a component.
-4.	This is a table of components for building the inverter schematic.
-5.	After entering components, click cancel in the add instance form or press ESC with your cursor in the schematic window.
+![330755446-94d85148-2ba5-4722-99bc-af66a2319183](https://github.com/Krishnakumar284/VLSI-LAB-EXP-6/assets/160303010/ebdcb5a6-a164-4d2d-80dd-b93c0663cef1)
 
-
-**ADDING PINS TO SCHEMATIC:**
-
-1.	Click the pin fixed menu icon in the schematic window. You can execute create pin or press ‘p’.
-2.	Add pin form appears. Type the following in the ADD pin form in the next order leaving space between the pin.
-3.	Select cancel and then the schematic window enter window file or press the f bind key.
-   
-**ADDING WIRES TO SCHEMATIC:**
-
-1.	Click the wire (narrow) icon in the schematic window.
-2.	In the schematic window click on a pin of one of your components as the first point for your wiring. A diamond shape appears over the starting point of this wire.
-3.	Follow the prompts at the bottom of design window and click left on the destination point for your wire. A wire is routed between the source and destination points.
-4.	Complete the wiring as shown in the figure and when done wiring press ECS key in the schematic window to cancel wiring.
-
-Saving the design:
-	Click the check and save icon in the schematic editor window observe CIW output for any errors.
-
-**BUILDING THE INVERTER TEST DESIGN:**
-
-Creating the inverter test cell view:
-1.	In the CIW or library manager, execute file – new – cell view.
-2.	Setup the newfile as shown below.
-3.	Click ok when done. A blank schematic window for the inverter test design appears.
-4.	Using the components list and properties/ comments in this table build the inverter test schematic.
-5.	Add the above components using create – instance or by pressing I.
-6.	Click the wire (narrow) icon and wire your schematic.
-7.	Click create wire name or press c to name the i/p (vsin) and output wires as in below schematic.
-8.	Click on the check and save icon to save the design.
- 
-
-
-**ANALOG SIMULATION WITH SPECTRA:**
-
-Starting the simulation environment:
-1.	In the Inverter-test schematic window execute launch – ADEL. The variable virtuoso analog design environment (ADE) simulation window appears.
-Choosing a simulator:
-1.	In the simulation window (ADE) execute setup – simulator / directory / host.
-2.	In the choosing simulator form, set the simulator field to specra and click ok.
-3.	In the simulation window (ADE) execute the setup model libraries.
-To complete, move the cursor and click ok.
-Choosing Analysis:
-1.	Click the choose- Analysis icon in the simulation window (ADE).
-2.	The choosing analysis form appears.
-3.	To Setup the transient analysis.
-a.	In the analysis section select tron.
-b.	Set the stop time as 100ns
-c.	Click at the moderate or enabled button and the bottom and then click apply.
-4.	To set for DC analysis
-a.	In the analysis section select DC.
-b.	Turn on save DC operating point.
-c.	Turn on the component parameters.
-d.	Double click the select Vpulse source or Type V0 (capital V zero).
-e.	Select the DC voltage in the select window parameter and click in the form start and stop voltages are 0 to 1.8.
-f.	Select the enable button and click apply and then click ok.
-
-**SELECTING OUTPUT FOR PLOTTING:**
-
-1.	Execute the o/p’s to be plotted  -select on sschematic in the simulation window.
-2.	Follow the prompt at the bottom. Click on the o/p net vout input vin of the inverter. Press esc with the cursor after selecting.
-
-**RUNNING THE SIMULATION:**
-
-1.	Execute the simulation Netlist and run in the simulation window to start the simulation on the icon. This will create the netlist as well as run the simulation.
-2.	When the simulation finishes the transient and DC plots automatically will be popped up along with netlist.
- 
-**CMOS INVERTER:**
-
-**CMOS INVERTER SCHEMATIC:**
-
-![330380552-d0f02630-9717-48b0-9304-7d17065b68e8](https://github.com/Krishnakumar284/VLSI-LAB-EXP-6/assets/160303010/2eb74365-605a-49c7-9cc0-7c0209306264)
-
-**SPECIFICATIONS**
-
-Vpulse 	V1 = 0	Vdc	= 1
-V2 = 1
-td = 0,tr=tf=1 n, ton= 100n ,T=200n
-
-**SIMULATION SETTINGS:**
-
-Setup for transient analysis:
-1.	Stop time =400n
-
-Setup for D.C analysis
-1.	Component to be selected in schematic is	for d.c analysis
-2.	Start = -1 Stop = 1 resp.
-
-
-**CMOS INVERTER TEST CELL VIEW:**
-
-![330380660-c0051703-49e7-4500-a3eb-c4c97dd06556](https://github.com/Krishnakumar284/VLSI-LAB-EXP-6/assets/160303010/9406d10d-264d-4138-944b-84f9e4e0a5b4)
-
-**CMOS INVERTER SIMULATION WITH SPECTRA:**
-
-**TRANSIENT RESPONSE:**
-![330380713-f225fe71-8103-4302-9a0f-18fd9025adcd](https://github.com/Krishnakumar284/VLSI-LAB-EXP-6/assets/160303010/e5401264-8c6f-4548-9c46-69ef8ecff160)
-
-**DC RESPONSE:**
-
-![330380799-8344e704-c6c7-4b31-960a-a7ddb540a24a](https://github.com/Krishnakumar284/VLSI-LAB-EXP-6/assets/160303010/11408a51-b9d9-475e-bd4a-f5316e889ee0)
-
-
-**CMOS NAND GATE:**
-
-**NAND SCHEMATIC:**
-
-![330380901-01f8be1e-3fc8-4c50-b831-847484cae7c5](https://github.com/Krishnakumar284/VLSI-LAB-EXP-6/assets/160303010/bc982338-1616-4b62-86ca-901f8b696fe0)
-
-
-**NAND TEST CELL VIEW:**
-
-![330380970-5ab06930-975d-4a8a-94b1-72754300f72d](https://github.com/Krishnakumar284/VLSI-LAB-EXP-6/assets/160303010/faf093e9-6851-4997-937f-777c381d325d)
-
-
-**NAND SIMULATION WITH SPECTRA:**
- 
-![330381022-9a392d71-2442-4cea-a3ca-e70d5d68f685](https://github.com/Krishnakumar284/VLSI-LAB-EXP-6/assets/160303010/2f0a30b1-70d6-46b9-9997-79803d8f7822)
-
-**CMOS NOR GATE:**
-
-**NOR SCHEMATIC:**
-
-![330381062-13aa23eb-47f4-4879-acc6-d8b8e0240cfc](https://github.com/Krishnakumar284/VLSI-LAB-EXP-6/assets/160303010/cfdc99cc-bb94-481a-ae53-6d0c990f73bf)
-
-
-**NOR TEST CELL VIEW:**
-
-![330381089-8989c1dc-d30a-49d9-b92f-26249f0a7451](https://github.com/Krishnakumar284/VLSI-LAB-EXP-6/assets/160303010/19c531f1-5df8-433c-b277-99ae48a7cee2)
-
-**NOR SIMULATION WITH SPECTRA:**
-
-![330381132-bdf535bd-2c8e-41e8-8cdb-7f2fe17e22dc](https://github.com/Krishnakumar284/VLSI-LAB-EXP-6/assets/160303010/bca529b7-d311-4bc1-9ec8-4c599c1ce9e8)
-
-
-**RESULT:**
-
-The Implementation of CMOS inverter, CMOS NAND and CMOS NOR gate waveforms are verified.
+## RESULT
+The schematic and simulate inverter using CADENCE is done and  verified successfully.
